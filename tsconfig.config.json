@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "target": "es2015",
+    "module": "es2015",
     "types": ["@types/node"],
     "noEmit": true,
     "allowJs": true
