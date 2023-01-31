@@ -1,11 +1,17 @@
 /// <reference types="screeps" />
 
-import PrototypeExtender from './src/PrototypeExtender';
-import extensions from './src/extensions';
+import ApiAugmenter from './src/ApiAugmenter';
+import { instanceMixin, staticMixin } from './src/mixins';
+
+declare global {
+  interface Game {
+    hasAugmentedApi: boolean;
+  }
+}
 
 function loop() {
-  if (!Game.hasExtendedPrototypes) {
-    new PrototypeExtender(extensions).apply([Game, Creep, Spawn]);
+  if (!Game.hasAugmentedApi) {
+    new ApiAugmenter(instanceMixin, staticMixin).apply([Game, Creep, Spawn]);
   }
 }
 
