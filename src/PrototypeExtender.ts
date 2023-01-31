@@ -12,10 +12,6 @@ export default class PrototypeExtender {
   }
 
   apply(classArr) {
-    if (Game.hasExtendedPrototypes) {
-      return;
-    }
-
     classArr.forEach((el) => {
       Object.assign(el.prototype, this.extensionsArr[el.prototype.constructor.name.toLowerCase()]);
     });
