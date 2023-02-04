@@ -1,4 +1,4 @@
-const instanceMixins = {
+const instanceMixins: Collection<Mixin> = {
   creep: {},
   spawn: {},
 };
