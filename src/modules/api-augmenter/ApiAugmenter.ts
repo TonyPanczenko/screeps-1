@@ -1,9 +1,11 @@
+import { Collection, Mixin } from 'types';
+
 export default class ApiAugmenter {
-  instanceMixin;
+  instanceMixin: Collection<Mixin>;
 
-  staticMixin;
+  staticMixin: Collection<Mixin>;
 
-  constructor(instanceMixin, staticMixin) {
+  constructor(instanceMixin: Collection<Mixin>, staticMixin: Collection<Mixin>) {
     this.instanceMixin = instanceMixin;
     this.staticMixin = staticMixin;
   }

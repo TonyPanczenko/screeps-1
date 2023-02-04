@@ -42,6 +42,9 @@ module.exports = {
       ignoreTrailingComments: true,
     },
     ],
+    '@typescript-eslint/no-explicit-any': [
+      'off',
+    ],
   },
   ignorePatterns: [
     'dist/*',

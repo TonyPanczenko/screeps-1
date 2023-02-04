@@ -1,7 +1,4 @@
-/// <reference types="screeps" />
-
-import ApiAugmenter from './src/ApiAugmenter';
-import { instanceMixin, staticMixin } from './src/mixins';
+import { ApiAugmenter, instanceMixins, staticMixins } from './src/modules/api-augmenter';
 
 declare global {
   interface Game {
@@ -11,7 +8,7 @@ declare global {
 
 function loop() {
   if (!Game.hasAugmentedApi) {
-    new ApiAugmenter(instanceMixin, staticMixin).apply([Game, Creep, Spawn]);
+    new ApiAugmenter(instanceMixins, staticMixins).apply([Game, Creep, Spawn]);
   }
 }
 
