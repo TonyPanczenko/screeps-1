@@ -1,14 +1,11 @@
 {
   "compilerOptions": {
-    "target": "es2015",
-    "module": "es2015",
     "types": [
       "node"
     ],
-    "noEmit": true,
     "allowJs": true
   },
-  "extends": "./tsconfig.base.json",
+  "extends": "./tsconfig.json",
   "include": [
     ".eslintrc.cjs",
   ]

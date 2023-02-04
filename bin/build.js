@@ -13,5 +13,5 @@ build({
   platform: 'node',
   target: 'node12',
   write: true,
-  tsconfig: 'tsconfig.base.json',
+  tsconfig: 'tsconfig.json',
 });
