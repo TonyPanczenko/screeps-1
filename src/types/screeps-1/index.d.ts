@@ -1,3 +1,7 @@
+interface Game {
+  hasAugmentedApi: boolean;
+}
+
 type Mixin = {
   [key: string]: any;
 };

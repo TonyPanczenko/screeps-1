@@ -8,11 +8,14 @@ export default class ApiAugmenter {
     this.staticMixin = staticMixin;
   }
 
-  apply(classArr) {
-    classArr.forEach((el) => {
-      const className = el.prototype.constructor.name.toLowerCase();
-      Object.assign(el.prototype, this.instanceMixin[className]);
-      Object.assign(el, this.staticMixin[className]);
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  apply(constructorArr: (Function | object)[]): void {
+    constructorArr.forEach((el) => {
+      if (typeof el === 'function') {
+        const className = el.name.toLowerCase();
+        Object.assign(el.prototype, this.instanceMixin[className]);
+        Object.assign(el, this.staticMixin[className]);
+      }
     });
   }
 }
