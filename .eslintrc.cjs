@@ -17,7 +17,6 @@ module.exports = {
   parserOptions: {
     sourceType: 'module',
     project: [
-      './tsconfig.json',
       './tsconfig.base.json',
       './tsconfig.config.json',
     ],
