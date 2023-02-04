@@ -3,6 +3,7 @@
     "types": [ 
       "node",
       "screeps",
+      "types"
     ],
   },
   "extends": "./tsconfig.json",
