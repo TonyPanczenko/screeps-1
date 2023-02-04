@@ -1,13 +1,17 @@
 {
-  "compilerOptions": {
+  "compilerOptions": { 
     "types": [ 
       "node",
-      "screeps"
+      "screeps",
     ],
   },
   "extends": "./tsconfig.json",
   "include": [
     "app.ts",
-    "./src/**/*.ts"
+    "src/**/*.ts"
   ],
+  "paths": {
+    "@src/*": ["src/*"],
+    "@types": ["src/types/types.d.ts"]
+  },
 }
