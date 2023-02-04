@@ -1,4 +1,4 @@
-import { Mixin, Collection } from '@types';
+import { Mixin, Collection } from 'types';
 
 export default class ApiAugmenter {
   instanceMixin: Collection<Mixin>;

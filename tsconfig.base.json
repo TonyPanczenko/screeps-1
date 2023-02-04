@@ -3,12 +3,11 @@
     "types": [ 
       "node",
       "screeps"
-    ],   
-    "allowJs": true
+    ],
   },
   "extends": "./tsconfig.json",
   "include": [
     "app.ts",
-    "src/**/*.ts"
+    "./src/**/*.ts"
   ],
 }
