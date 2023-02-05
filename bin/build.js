@@ -6,7 +6,7 @@ build({
   outdir: 'dist',
   minify: true,
   bundle: true,
-  format: 'esm',
+  format: 'cjs',
   loader: {
     '.ts': 'ts',
   },
