@@ -16,7 +16,7 @@ export default class ApiAugmenter {
         Object.assign(el.prototype, this.instanceMixin[className]);
         Object.assign(el, this.staticMixin[className]);
       } else {
-        console.log(`# ${el} could not be augmented.`);
+        console.log(`## ApiAugmenter: ${el} could not be augmented.`);
       }
     });
   }
