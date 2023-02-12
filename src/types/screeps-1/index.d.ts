@@ -10,6 +10,6 @@ type Mixin = {
   [key: string]: any;
 };
 
-type Hash<KeyType, ValueType> = {
-  [key: KeyType]: ValueType
+type Hash<ValueType> = {
+  [key: string]: ValueType
 };

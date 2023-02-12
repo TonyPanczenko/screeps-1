@@ -23,16 +23,18 @@ export default class RoomManager {
     return this.isVisible && !!this.room?.controller?.my;
   }
 
-  planNewConstruction(structType: keyof typeof MAX_NUM_OF_STRUCTURES) {
+  planNewConstruction(newStructType: keyof typeof MAX_NUM_OF_STRUCTURES) {
     if (!this.isRoomControlled()) return;
+
     const roomControllerLevel: number = this.room!.controller!.level;
-    const maxNumOfStruct: number = MAX_NUM_OF_STRUCTURES[structType][roomControllerLevel] || 0;
+    const maxNumOfStruct: number = MAX_NUM_OF_STRUCTURES[newStructType][roomControllerLevel] || 0;
     const structCount = this.room!.find(FIND_STRUCTURES, {
-      filter: (struct) => struct.structureType === structType,
+      filter: (struct) => struct.structureType === newStructType,
     }).length;
+    const newStructCount = maxNumOfStruct - structCount;
 
-    if (structCount < maxNumOfStruct) {
+    if (newStructCount <= 0) return;
 
-    }
+    const a;
   }
 }

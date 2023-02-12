@@ -1,20 +1,22 @@
 export default class ApiAugmenter {
-  instanceMixin: Hash<Mixin>;
+  instanceMixins: Hash<Mixin>;
 
-  staticMixin: Hash<Mixin>;
+  staticMixins: Hash<Mixin>;
 
-  constructor(instanceMixin: Hash<Mixin>, staticMixin: Hash<Mixin>) {
-    this.instanceMixin = instanceMixin;
-    this.staticMixin = staticMixin;
+  constructor(instanceMixins: Hash<Mixin>, staticMixins: Hash<Mixin>) {
+    this.instanceMixins = instanceMixins;
+    this.staticMixins = staticMixins;
   }
 
   // eslint-disable-next-line @typescript-eslint/ban-types
   apply(constructorArr: (Function | object)[]): void {
     constructorArr.forEach((el) => {
       if (typeof el === 'function') {
-        const className = el.name.toLowerCase();
-        Object.assign(el.prototype, this.instanceMixin[className]);
-        Object.assign(el, this.staticMixin[className]);
+        const className: string = el.name.toLowerCase();
+        const instanceMixin: Mixin = this.instanceMixins[className] || {};
+        Object.assign(el.prototype, instanceMixin);
+        const staticMixin: Mixin = this.staticMixins[className] || {};
+        Object.assign(el, staticMixin);
       } else {
         console.log(`## ApiAugmenter: ${el} could not be augmented.`);
       }
