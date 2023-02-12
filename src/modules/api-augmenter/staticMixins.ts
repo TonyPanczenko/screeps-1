@@ -1,4 +1,4 @@
-const staticMixins: Collection<Mixin> = {
+const staticMixins: Hash<Mixin> = {
   creep: {},
   spawn: {},
   game: {

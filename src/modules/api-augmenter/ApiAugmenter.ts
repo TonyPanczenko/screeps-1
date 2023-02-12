@@ -1,9 +1,9 @@
 export default class ApiAugmenter {
-  instanceMixin: Collection<Mixin>;
+  instanceMixin: Hash<Mixin>;
 
-  staticMixin: Collection<Mixin>;
+  staticMixin: Hash<Mixin>;
 
-  constructor(instanceMixin: Collection<Mixin>, staticMixin: Collection<Mixin>) {
+  constructor(instanceMixin: Hash<Mixin>, staticMixin: Hash<Mixin>) {
     this.instanceMixin = instanceMixin;
     this.staticMixin = staticMixin;
   }

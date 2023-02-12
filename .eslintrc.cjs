@@ -47,6 +47,7 @@ module.exports = {
       'off',
     ],
     'no-console': ['off'],
+    '@typescript-eslint/no-non-null-assertion': ['off'],
   },
   ignorePatterns: [
     'dist/*',
